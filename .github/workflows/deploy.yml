@@ -1,0 +1,29 @@
+name: 깃허브 뭐시기 테스트
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  My-First-CICD-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: simple-web
+        run: echo "this is the first auto cicd step 1"
+
+  My-Second-CICD-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 디렉토리 확인
+        run: |
+          pwd
+          ls -al
+
+      - name: 파일 생성
+        run: |
+          echo "ttt" > test.txt
+          ls -al
+          
